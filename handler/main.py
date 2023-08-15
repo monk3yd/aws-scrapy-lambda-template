@@ -8,13 +8,6 @@ from loguru import logger
 from spider_manager import SpiderManager
 from ip import IPSpider
 
-# Cross Origin Resource Share (CORS) headers
-CORS = {
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
-    "Content-Type": "application/json"
-}
 
 def lambda_handler(event=dict(), context=dict()):
     key = os.getenv("KEY")
@@ -29,7 +22,6 @@ def lambda_handler(event=dict(), context=dict()):
     # TODO: return spider job id
     return {
         "statusCode": 200,
-        "headers": CORS,
         "message": "init spider"
     }
 
